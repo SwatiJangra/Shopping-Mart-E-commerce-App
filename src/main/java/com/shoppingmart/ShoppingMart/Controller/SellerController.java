@@ -15,7 +15,13 @@ public class SellerController {
     SellerService sellerService;
 
     @PostMapping("/add-seller")
-    public String addSeller(@RequestBody SellerRequestDTO sellerRequestDTO) {
-
+    public String addSeller(@RequestBody SellerRequestDTO sellerRequestDto){
+        return sellerService.addSeller(sellerRequestDto);
     }
+
+    // Get all sellers
+
+    // get a seller by PAN Card
+
+    // find sellers of a particular age
 }

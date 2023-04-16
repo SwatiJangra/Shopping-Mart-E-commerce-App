@@ -1,5 +1,7 @@
 package com.shoppingmart.ShoppingMart.Model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -12,21 +14,27 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Table(name="orderedItem")
 public class OrderedItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     @CreationTimestamp
     private Date orderDate;
+
     private int totalCost;
+
     private int deliveryCharge;
-    private String cardUserForPayment;
+
+    private String cardUsedForPayment;
 
     @ManyToOne
     @JoinColumn
     Customer customer;
 
-    @OneToMany(mappedBy = "orderedItem", cascade = CascadeType.ALL)
-    List<Item> items=new ArrayList<>();
+    @OneToMany(mappedBy = "order",cascade = CascadeType.ALL)
+    List<Item> orderedItems = new ArrayList<>();
 }
