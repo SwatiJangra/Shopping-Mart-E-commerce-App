@@ -1,6 +1,6 @@
 package com.shoppingmart.ShoppingMart.Model;
 
-import com.shoppingmart.ShoppingMart.Enum.Category;
+import com.shoppingmart.ShoppingMart.Enum.ProductCategory;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,12 +18,12 @@ public class Product {
     private int price;
     private int quantity;
     @Enumerated(EnumType.STRING)
-    private Category category;
+    private ProductCategory productCategory;
 
     @ManyToOne
     @JoinColumn
     Seller seller;
 
-    @OneToOne(mappedBy = "product", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "product",cascade = CascadeType.ALL)
     Item item;
 }

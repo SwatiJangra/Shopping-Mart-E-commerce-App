@@ -1,5 +1,6 @@
 package com.shoppingmart.ShoppingMart.Model;
 
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@Builder
 @Table(name="seller")
 public class Seller {
     @Id

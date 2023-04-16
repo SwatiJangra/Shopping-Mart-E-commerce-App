@@ -1,6 +1,6 @@
 package com.shoppingmart.ShoppingMart.Enum;
 
-public enum Category {
+public enum ProductCategory {
     SPORTS,
     FASHION,
     ELECTRONICS

@@ -23,8 +23,4 @@ public class Cart {
 
     @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
     List<Item> items=new ArrayList<>();
-
-    @OneToOne
-    @JoinColumn
-    Product product;
 }
